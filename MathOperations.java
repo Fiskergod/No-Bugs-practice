@@ -1,5 +1,5 @@
 public class MathOperations {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         // Задание 1
         int resultAdd = add(3, 9);
         System.out.println("Результат сложения: " + resultAdd);
@@ -20,9 +20,9 @@ public class MathOperations {
         System.out.println("Разница между двумя числами: " + resultDifference);
         // Задание 4
         int resultArea = squareArea(3);
-        int resulPerimeter = squarePerimeter(9);
+        int resultPerimeter = squarePerimeter(9);
         System.out.println("Площадь квадрата: " + resultArea);
-        System.out.println("Периметр квадрата: " + resulPerimeter);
+        System.out.println("Периметр квадрата: " + resultPerimeter);
         // Задание 5
         double resultSecToMin = convertSecondsToMinutes(360);
         System.out.println("Результат перевода секунд в минуты: " + resultSecToMin);
