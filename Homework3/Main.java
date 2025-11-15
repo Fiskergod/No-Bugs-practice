@@ -1,7 +1,7 @@
 package homework_3;
 
 public class Main {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         Company employee = new Company(1, "Ivan");
         Company employee2 = new Company(2, "Oleg");
         Company employee3 = new Company(3, "Petya");
@@ -60,3 +60,4 @@ public class Main {
         person3.printPersonInfo();
     }
 }
+
