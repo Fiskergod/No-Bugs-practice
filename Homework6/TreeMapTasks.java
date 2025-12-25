@@ -34,11 +34,12 @@ public class TreeMapTasks {
         if (id.isBlank() || name.isBlank()) {
             System.out.println("You can not use empty space!");
         } else {
-            employees.put(id, id);
+            employees.put(id, name);
         }
     }
 
     public static void findNearestGreaterId(TreeMap<String, String> employeeTree, String key) {
         System.out.println("Nearest greater ID - " + employeeTree.higherKey(key));
     }
+
 }
