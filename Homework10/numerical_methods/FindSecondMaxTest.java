@@ -31,27 +31,27 @@ public class FindSecondMaxTest extends NumericalProcessorTest {
 
     @ParameterizedTest
     @MethodSource("validArraysToFindSecondMaxNumber")
-    public void userCanFindSecondMaxNumber(int[] initialNumbers, int expectedNumber) {
+    public void ShouldReturnSecondMaxNumber(int[] initialNumbers, int expectedNumber) {
         assertEquals(expectedNumber, numericalProcessor.findSecondMax(initialNumbers),
                 "Incorrect second max number!");
     }
 
     @Test
-    public void userCannotFindSecondMaxNumberDueToSingleElement() {
+    public void ShouldThrowExceptionDueToSingleElement() {
         assertThrows(IllegalArgumentException.class, () -> {
             numericalProcessor.findSecondMax(new int[] {8});
         }, "Should throw IllegalArgumentException with 1 element in the array!");
     }
 
     @Test
-    public void userCannotFindSecondMaxNumberDueToEmptyArray() {
+    public void ShouldThrowExceptionDueToEmptyArray() {
         assertThrows(IllegalArgumentException.class, () -> {
             numericalProcessor.findSecondMax(new int[] {});
         }, "Should throw IllegalArgumentException with 0 element in the array!");
     }
 
     @Test
-    public void userCannotFindSecondMaxNumberDueToSameElements() {
+    public void ShouldThrowExceptionDueToSameElements() {
         assertThrows(NoSuchElementException.class, () -> {
             numericalProcessor.findSecondMax(new int[] {4, 4, 4, 4});
         }, "Should throw NoSuchElementException with the same elements in the array!");
