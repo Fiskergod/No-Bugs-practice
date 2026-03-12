@@ -19,14 +19,14 @@ public class IsEvenTest extends NumericalProcessorTest {
      */
     @ParameterizedTest
     // Четные числа, отрицательные четные числа и 0
-    @ValueSource(ints = {0, 2, 4, 6, 8, 10, 100, -2, -4, -6, -8, - 10, -100})
+    @ValueSource(ints = {0, 2, 4, 6, 8, 10, 100, -2, -4, -6, -8, -10, -100})
     public void testEvenNumbers(int number) {
         assertTrue(numericalProcessor.isEven(number));
     }
 
     @ParameterizedTest
     // Нечетные числа, отрицательные нечетные числа
-    @ValueSource(ints = {1, 3, 5, 7, 9, 11, 99, -1, -3, -7, -9, - 11, -99})
+    @ValueSource(ints = {1, 3, 5, 7, 9, 11, 99, -1, -3, -7, -9, -11, -99})
     public void testOddNumbers(int number) {
         assertFalse(numericalProcessor.isEven(number));
     }
