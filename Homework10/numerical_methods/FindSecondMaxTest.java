@@ -24,7 +24,7 @@ public class FindSecondMaxTest extends NumericalProcessorTest {
      */
     public static Stream<Arguments> validArraysToFindSecondMaxNumber() {
         return Stream.of(
-                Arguments.of(new int[] {1, 3, 6, 9}, 6),
+                Arguments.of(new int[] {-1, -3, -6, -9}, -3),
                 Arguments.of(new int[] {3, 5, 7, 2}, 5)
         );
     }
