@@ -3,13 +3,13 @@ package homework_11;
 public class DebugTask5 {
     static void main(String[] args) {
         // Task 5: Код должен увеличить возраст человека, но почему-то возраст остаётся прежним.
-        // Solution: нужно добавить сеттер, чтобы изменить возраст.
+        // Solution: нужно добавить сеттер и вместо создания нового объекта необходимо изменять существующий.
         Person person = new Person("Alice", 25);
         updateAge(person);
         System.out.println("Updated age: " + person.getAge());
     }
     public static void updateAge(Person person) {
-        person = new Person(person.getName(), person.setAge(person.getAge() + 1));
+        person.setAge(person.getAge() + 1);
     }
 }
 class Person {
