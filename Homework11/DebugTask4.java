@@ -1,13 +1,18 @@
 package homework_11;
 
 public class DebugTask4 {
-    static void main(String[] args) {
+       static void main(String[] args) {
         // Task 4: Код должен проверить, является ли строка палиндромом, но выбрасывает NullPointerException.
-        // Solution: заменить null на любой палиндромный String(анна)
-        System.out.println(isPalindrome("abba"));
+        // Solution: Нужно добавить проверку внутри метода на ввод null через оператор if.
+        System.out.println(isPalindrome(null));
     }
+
     public static boolean isPalindrome(String str) {
-        String reversed = new StringBuilder(str).reverse().toString();
-        return str.equals(reversed);
+        if (str == null) {
+            return false;
+        } else {
+            String reversed = new StringBuilder(str).reverse().toString();
+            return str.equals(reversed);
+        }
     }
 }
