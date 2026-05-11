@@ -51,7 +51,8 @@ public class GradeServiceTest {
     void addNegativeGradeTest() {
         StudentGrade<Number> grade = new StudentGrade<>("Anna", "Math", -5);
 
-        assertDoesNotThrow(() -> gradeService.addGrade(grade));
+        assertThrows(InvalidGradeException.class,
+                () -> gradeService.addGrade(grade));
     }
 
     @Test
