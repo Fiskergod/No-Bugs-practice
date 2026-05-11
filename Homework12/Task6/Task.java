@@ -5,26 +5,26 @@ import java.util.Objects;
 
 public class Task<T> {
     private final T ID;
-    private String priority;
+    private Priority priority;
     private LocalDate date;
-    private boolean completed;
+    private Status status;
 
-    public Task(T ID, String priority, LocalDate date, boolean completed) {
+    public Task(T ID, Priority priority, LocalDate date, Status completed) {
         this.ID = ID;
         this.priority = priority;
         this.date = date;
-        this.completed = completed;
+        this.status = completed;
     }
 
     public T getID() {
         return ID;
     }
 
-    public boolean isCompleted() {
-        return completed;
+    public Status getStatus() {
+        return status;
     }
 
-    public String getPriority() {
+    public Priority getPriority() {
         return priority;
     }
 
@@ -47,6 +47,6 @@ public class Task<T> {
 
     @Override
     public String toString() {
-        return "Task: ID - " + ID + ", Priority - " + priority + ", Date - " + date + ", Status - " + completed + ".";
+        return "Task: ID - " + ID + ", Priority - " + priority + ", Date - " + date + ", Status - " + status + ".";
     }
 }
