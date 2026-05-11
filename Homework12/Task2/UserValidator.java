@@ -40,7 +40,7 @@ public class UserValidator {
     }
 
     // Основной метод валидации пользователя
-    public static void validate(User user) {
+    public static void validate(User user) throws InvalidUserException {
         // Если валидация выключена - пропускаем проверку
         if (!validationEnabled) {
             System.out.println("Валидация отключена, проверка не может быть выполнена!");
@@ -50,14 +50,9 @@ public class UserValidator {
         System.out.println("Выполняется валидация пользователя - " + user + "...");
 
         // Последовательная проверка всех полей
-        try {
             validateName(user.getName());
             validateAge(user.getAge());
             validateEmail(user.getEmail());
-        } catch (InvalidUserException ex) {
-            System.out.println("Ошибка! " + ex.getMessage());
-            return;
-        }
 
         System.out.println("Валидация пройдена!");
     }
