@@ -25,9 +25,9 @@ public class TaskService<T> {
         return taskSet.removeIf(task -> task.getID().equals(id));
     }
 
-    public Set<Task<T>> getTaskByStatus(boolean status) {
+    public Set<Task<T>> getTaskByStatus(Status status) {
         Set<Task<T>> result = taskSet.stream()
-                .filter(el -> el.isCompleted() == status)
+                .filter(el -> el.getStatus().equals(status))
                 .collect(Collectors.toSet());
 
         System.out.println("\nНайдено задач со статусом '" + status + "': " + result.size());
@@ -36,7 +36,7 @@ public class TaskService<T> {
         return result;
     }
 
-    public Set<Task<T>> getTaskByPriority(String priority) {
+    public Set<Task<T>> getTaskByPriority(Priority priority) {
         Set<Task<T>> result = taskSet.stream()
                 .filter(el -> el.getPriority().equals(priority))
                 .collect(Collectors.toSet());
@@ -50,7 +50,6 @@ public class TaskService<T> {
     public Set<Task<T>> getSortedTaskByDate() {
         Set<Task<T>> result = taskSet.stream()
                 .sorted(Comparator.comparing(el -> el.getDate(), Comparator.reverseOrder()))
-                //.sorted(Comparator.comparing(Task::getDate, Comparator.reverseOrder()))
                 .collect(Collectors.toCollection(LinkedHashSet::new));
 
         System.out.println("\nЗадачи отсортированные по дате: ");
