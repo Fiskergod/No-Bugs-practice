@@ -30,7 +30,8 @@ public class Main {
         personManager.filterByName("Olya").forEach(System.out::println);
 
         // Фильтр по активности
-        System.out.println("\nАктивные:");
+        System.out.println("\nАктивность:");
         personManager.filterByActive(true).forEach(System.out::println);
+        personManager.filterByActive(false).forEach(System.out::println);
     }
 }
