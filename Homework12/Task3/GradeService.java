@@ -10,19 +10,16 @@ public class GradeService<T extends Number> {
         return List.copyOf(gradeList);
     }
 
-    public synchronized void addGrade(StudentGrade<T> grade) {
-        try {
-            if (grade.getGrade() == null || grade.getGrade().doubleValue() < 0) {
-                throw new InvalidGradeException("Оценка не может быть отрицательной!");
+    public synchronized void addGrade(StudentGrade<T> grade) throws InvalidGradeException {
+            if (grade.getGrade() == null
+                    || grade.getGrade().doubleValue() < 0
+                    || grade.getGrade().doubleValue() > 5) {
+                throw new InvalidGradeException("Оценка не может быть null, отрицательной или больше 5!");
             }
 
             gradeList.add(grade);
             System.out.println("Оценка - " + grade.getGrade() + " добавлена. Студент: " + grade.getStudentName()
                     + ", предмет - " + grade.getSubject());
-
-        } catch (InvalidGradeException ex) {
-            System.err.println("Ошибка! " + ex.getMessage());
-        }
     }
 
     public synchronized double getAverageBySubject(String subject) {
