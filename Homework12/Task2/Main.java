@@ -8,20 +8,25 @@ public class Main {
         User invalidAgeUser = new User("Мария", 16, "maria@example.com");
         User invalidEmailUser = new User("Анна", 35, "anna@example");
 
+        try {
         // Валидация включена
         UserValidator.setValidationEnabled(true);
 
-        UserValidator.validate(validUser);
-        UserValidator.validate(invalidNameUser);
-        UserValidator.validate(invalidAgeUser);
-        UserValidator.validate(invalidEmailUser);
+            UserValidator.validate(validUser);
+            UserValidator.validate(invalidNameUser);
+            UserValidator.validate(invalidAgeUser);
+            UserValidator.validate(invalidEmailUser);
 
         // Валидация выключена
         UserValidator.setValidationEnabled(false);
 
-        UserValidator.validate(validUser);
-        UserValidator.validate(invalidNameUser);
-        UserValidator.validate(invalidAgeUser);
-        UserValidator.validate(invalidEmailUser);
+            UserValidator.validate(validUser);
+            UserValidator.validate(invalidNameUser);
+            UserValidator.validate(invalidAgeUser);
+            UserValidator.validate(invalidEmailUser);
+
+        } catch (InvalidUserException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
